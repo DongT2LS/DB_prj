@@ -1,0 +1,8 @@
+1) SELECT COUNT(b.blog_id) AS numberofblogs,u.username FROM blog.blogpost b
+INNER JOIN blog.user u ON u.user_id = b.user_id
+GROUP BY b.user_id ; /* Lấy số lượng bài viết của từng người trong bảng blogpost */
+
+2) SELECT b.blog_id,b.blog_title,b.blog_summary,b.blog_post,u.name 
+FROM blog.blogpost b,blog.user u
+WHERE u.user_id = b.user_id /*(AND user_id = 1) Nếu muốn lấy theo người dùng */
+ORDER BY name; /* Lấy các thuộc tính của bài viết theo từng người dùng */
